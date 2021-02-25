@@ -4,7 +4,7 @@ const Schema = mongoose.Schema
 
 const BannersSchema = new Schema({
     path: {
-        type: String,
+        type: Object,
         required: true,
     },
     placement: {

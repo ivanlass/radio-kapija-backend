@@ -8,6 +8,7 @@ const YoutubeData = require('./models/youtube.model')
 const scheduler = require('node-schedule');
 const fileUpload = require('express-fileupload')
 var publicDir = require('path').join(__dirname, '/banners/');
+const formData = require("express-form-data");
 
 app.use(express.static(publicDir));
 app.use(cors());
@@ -15,7 +16,7 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
 app.use(bodyParser.json())
-app.use(fileUpload())
+app.use(formData.parse());
 const port = process.env.PORT || 5000;
 
 
